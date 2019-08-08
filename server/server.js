@@ -6,7 +6,7 @@ const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 const authCtrl = require('./controllers/authController')
 
 const app = express()
-
+//Make sure that your middleware (app.use) is above the endpoints so they can run first
 app.use(express.json())
 app.use(session({
     secret: SESSION_SECRET,
@@ -17,7 +17,8 @@ app.use(session({
     }
   }))
 
-  app.post('/auth/register', authCtrl.register)
+app.post('/auth/register', authCtrl.register)
+app.delete('/auth/logout', authCtrl.logout)
 
 
 massive(CONNECTION_STRING).then(db => {
