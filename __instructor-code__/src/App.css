@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(180deg, #20bf55 0%, #01baef 74%);
+  background: linear-gradient(to bottom, #d6c0ab, #f6ffc6);
   min-height: 100vh;
 }
 .App {
